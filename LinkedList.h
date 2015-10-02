@@ -10,7 +10,7 @@ class LinkedList {
  public:
   
   // Default constructor
-  LinkedList() { head = NULL; }
+  LinkedList() { head = tail = NULL; }
   
   /* //Copy constructor (deep copy)
   BST( const BST<T> &o ) { root = copyTree(o.root); }

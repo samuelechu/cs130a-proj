@@ -6,7 +6,6 @@ void LinkedList<T>::printList(const LinkedList<T>::Node *n, std::ostream &os) co
   if(!n)
     return;
   else {
-    
     os << n->value << endl;
     
     if(n->next)
@@ -22,7 +21,7 @@ void LinkedList<T>::deleteList(LinkedList<T>::Node *n){
   if(n == NULL)
     return;
 
-  deleteList(n -> next)
+  deleteList(n -> next);
 
   delete n;
   return;
