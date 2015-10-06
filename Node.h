@@ -1,0 +1,12 @@
+template < typename T >
+class Node {
+  public:
+    Node(const T &v): value(v) 
+    { 
+      next = prev = NULL;
+    }
+
+    T value;
+    Node *next;
+    Node *prev;
+  };

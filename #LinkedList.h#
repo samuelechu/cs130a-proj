@@ -2,7 +2,7 @@
 #define __LINKED_LIST_H__
 
 #include <iostream>
-
+#include "Node.h"
 
 template < typename T >
 //The Binary Search tree for Cards
@@ -12,19 +12,16 @@ class LinkedList {
   // Default constructor
   LinkedList() { head = tail = NULL; }
   
-
-class Node {
-  public:
-    Node(const T &v): value(v) 
-    { 
-      next = prev = NULL;
-    }
-
-    T value;
-    Node *next;
-    Node *prev;
-    };
-    
+  /* //Copy constructor (deep copy)
+  BST( const BST<T> &o ) { root = copyTree(o.root); }
+  */
+  
+  /*//Assignment (deep copy)
+  BST& operator=(const BST<T> &o) { 
+    deleteTree(root); 
+    root = copyTree(o.root); 
+    return *this;
+  }*/
 
   //stream output operator
   friend std::ostream& operator<< (std::ostream& strm, const LinkedList<T>& list) {
@@ -51,6 +48,19 @@ class Node {
 
  private:
 
+  class Node {
+  public:
+    Node(const T &v): value(v) 
+    { 
+      next = prev = NULL;
+    }
+
+    // These are the attributes of a CardBST::Node you can use.
+    T value;
+    Node *next;
+    Node *prev;
+  };
+
 
   Node* head;
   Node* tail;
@@ -63,5 +73,5 @@ class Node {
   
 };
 
-
+#include "LinkedList.cpp"
 #endif
