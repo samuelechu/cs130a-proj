@@ -93,7 +93,7 @@ void LinkedList<T>::insert(LinkedList<T>::Node *n, const T &c) {
 
   newNode -> prev = n;
   n -> next = newNode;
- 
+  tail = newNode;
   return;
 }
 
