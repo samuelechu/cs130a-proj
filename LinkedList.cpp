@@ -18,6 +18,48 @@ void LinkedList<T>::printList(const LinkedList<T>::Node *n, std::ostream &os) co
   }
 }
 
+template < typename T>
+typename LinkedList<T>::Node* LinkedList<T>::find(const T& v){
+  Node *n = head;
+  Node *found = NULL;
+  
+  while(n){
+    if(n->value == v){
+      found = n;
+      return found;
+    }
+
+    n = n->next;
+
+  }
+
+  return found;
+
+
+}
+
+template < typename T >
+void LinkedList<T>::deleteNode(LinkedList<T>::Node *n){
+  if(!n->next){
+    n->prev->next = NULL;
+    tail = n->prev;
+    delete n;
+  }
+  else if(!n->prev){
+    n->next->prev = NULL;
+    head = n->next;
+    delete n;
+    return;
+  }
+  else{
+    n->prev->next = n->next;
+    n->next->prev = n->prev;
+    delete n;
+  }
+    
+  
+}
+
 template < typename T >
 void LinkedList<T>::deleteList(LinkedList<T>::Node *n){
 

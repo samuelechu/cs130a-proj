@@ -41,9 +41,18 @@ struct Node {
   }
 
 
+  void deleteValue(const T &value){
+
+    Node *found = find(value);
+
+    if(found)
+      deleteNode(found);
+
+
+  }
+  
   //T* find(const T& value) const { return find(root, value); }
   int getSize() const{ return getSize(head); }
-  
 
  private:
 
@@ -56,6 +65,8 @@ struct Node {
   void deleteList(Node *n);
   void insert(Node *n, const T& v);
   int getSize(const Node *n) const;
+  void deleteNode(Node *n);
+  Node* find(const T& v);
   
 };
 
