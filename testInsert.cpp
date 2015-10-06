@@ -15,6 +15,7 @@ int main(){
    l.insert(4);
    l.insert(5);
 
+   cout << l;
    ASSERT_EQUALS(2,l.getSize());
 
 }

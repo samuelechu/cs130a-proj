@@ -1,3 +1,5 @@
+#ifndef __LINKED_LIST_CPP__
+#define __LINKED_LIST_CPP__
 #include <iostream>
 #include "LinkedList.h"
 using namespace std;
@@ -45,10 +47,12 @@ template < typename T >
 void LinkedList<T>::insert(LinkedList<T>::Node *n, const T &c) {
 
   
-  LinkedList<T>::Node *newNode = new Node(c);
+  LinkedList<T>::Node *newNode = new Node(c, NULL, NULL);
 
   newNode -> prev = n;
   n -> next = newNode;
  
   return;
 }
+
+#endif

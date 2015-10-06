@@ -5,7 +5,6 @@
 
 
 template < typename T >
-//The Binary Search tree for Cards
 class LinkedList {
  public:
   
@@ -13,16 +12,13 @@ class LinkedList {
   LinkedList() { head = tail = NULL; }
   
 
-class Node {
-  public:
-    Node(const T &v): value(v) 
-    { 
-      next = prev = NULL;
-    }
+struct Node {
 
     T value;
     Node *next;
     Node *prev;
+    Node(T t, Node* n, Node * p) : value(t), next(n), prev(p) {}
+
     };
     
 
@@ -37,7 +33,7 @@ class Node {
   
   void insert(const T &value){ 
     if(!head) {
-      head = new Node(value);
+      head = new Node(value, NULL, NULL);
       tail = head;
     }
     else
@@ -63,5 +59,5 @@ class Node {
   
 };
 
-
+#include "LinkedList.cpp"
 #endif
