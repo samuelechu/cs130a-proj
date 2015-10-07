@@ -18,6 +18,24 @@ void LinkedList<T>::printList(const LinkedList<T>::Node *n, std::ostream &os) co
   }
 }
 
+template <typename T>
+void LinkedList<T>::deleteAtNdx(int index){
+
+  Node *n = head;
+
+  int curNdx = 0;
+  while (n || curNdx < index){
+
+    n = n->next;
+    curNdx++;
+  }
+
+
+  if(n)
+    deleteNode(n);
+}
+
+
 template < typename T>
 typename LinkedList<T>::Node* LinkedList<T>::find(const T& v){
   Node *n = head;

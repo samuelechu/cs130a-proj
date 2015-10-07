@@ -50,6 +50,8 @@ struct Node {
 
 
   }
+
+  void deleteAtNdx(int index);
   
   //T* find(const T& value) const { return find(root, value); }
   int getSize() const{ return getSize(head); }
