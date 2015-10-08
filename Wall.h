@@ -23,7 +23,8 @@ class Wall{
   
   string getUsername(){return username;}
   void setUsername(string &u){username = u;}
-  
+
+  void printWall();  
  private:
 
   LinkedList<WallPost> wallPosts;

@@ -20,3 +20,13 @@ void Wall::remove(int index){
   
 
 }
+
+void Wall::printWall(){
+
+  LinkedList<WallPost> n = WallPosts.head;
+  
+  while(n){
+    n->value.printPost();
+    n = n->next;
+  }
+}
