@@ -8,8 +8,14 @@ using namespace std;
 
 class User{
  public:
- User(Wall w, string u, string p, string rn, string occ): password(p), realName(rn), occupation(occ){
+ User(Wall w, string p, string rn, string occ): password(p), realName(rn), occupation(occ){
     username = w.getUsername();
+    wall = NULL;
+  }
+
+
+ User(string u, string p, string rn, string occ): username(u),  password(p), realName(rn), occupation(occ){
+    wall = NULL;
 
   }
 
@@ -18,6 +24,10 @@ class User{
 
   }
 
+  string getInfo(){
+    return "Username: " username + "\nPassword: " + password + "\nFull Name:" + realname + "\nOccupation: " + occupation;
+  }
+ 
   
   string getUsername(){return username;}
   void setUsername(string &u){username = u;}
@@ -42,3 +52,4 @@ class User{
   string occupation;
 
 }
+#endif

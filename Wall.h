@@ -31,3 +31,4 @@ class Wall{
   string username;
 
 }
+#endif
