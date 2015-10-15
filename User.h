@@ -8,15 +8,13 @@ using namespace std;
 
 class User{
  public:
- User(Wall w, string p, string rn, string occ): password(p), realName(rn), occupation(occ){
+  /*User(Wall w, string p, string rn, string occ): password(p), realName(rn), occupation(occ){
     username = w.getUsername();
-    wall = NULL;
-  }
+  }*/
 
 
  User(string u, string p, string rn, string occ): username(u),  password(p), realName(rn), occupation(occ){
-    wall = NULL;
-
+    wall.setUsername(u);
   }
 
   ~User(){
@@ -25,7 +23,7 @@ class User{
   }
 
   string getInfo(){
-    return "Username: " username + "\nPassword: " + password + "\nFull Name:" + realname + "\nOccupation: " + occupation;
+    return "Username: " + username + "\nPassword: " + password + "\nFull Name:" + realName + "\nOccupation: " + occupation;
   }
  
   
@@ -38,7 +36,7 @@ class User{
   string getRealName(){return realName;}
   void setRealName(string &rn){realName = rn;}
 
-  void getOccupation(){return occupation;}
+  string getOccupation(){return occupation;}
   void setOccupation(string &occ){occupation = occ;}
 
   void addWallPost(string c, string t){wall.insert(c, t, username);}
@@ -51,5 +49,5 @@ class User{
   string realName;
   string occupation;
 
-}
+};
 #endif

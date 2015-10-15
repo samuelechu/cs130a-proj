@@ -1,0 +1,27 @@
+#include "LinkedList.h"
+
+#include <iostream>
+#include "tddFuncs.h"
+#include "UserNetwork.h"
+
+using namespace std;
+
+int main(){
+
+   cout << "Running tests from: " << __FILE__ << endl;
+
+   UserNetwork u;
+   
+
+   u.addUser("Sam", "Sammy", "Samuel Chu", "software developer");
+
+
+   cout << "Current List : \n" << ;
+
+
+   
+
+
+   ASSERT_EQUALS(1,u.getSize());
+
+}

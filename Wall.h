@@ -8,8 +8,13 @@ using namespace std;
 
 class Wall{
  public:
+
+  Wall(){
+ 
+ }
+
+
  Wall(string u): username(u){
-    wallPosts = NULL;
 
   }
 
@@ -30,5 +35,5 @@ class Wall{
   LinkedList<WallPost> wallPosts;
   string username;
 
-}
+};
 #endif
