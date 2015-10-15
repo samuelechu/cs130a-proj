@@ -50,6 +50,7 @@ struct Node {
 
   }
 
+  void deleteNode(Node *n);
   void deleteAtNdx(int index);
   
   //T* find(const T& value) const { return find(root, value); }
@@ -67,7 +68,7 @@ struct Node {
   void deleteList(Node *n);
   void insert(Node *n, const T& v);
   int getSize(const Node *n) const;
-  void deleteNode(Node *n);
+  
   Node* find(const T& v);
   
 };
@@ -127,6 +128,7 @@ struct Node {
 
   }
 
+  void deleteNode(Node<T> *n);
   void deleteAtNdx(int index);
   
   //T* find(const T& value) const { return find(root, value); }
@@ -144,7 +146,6 @@ struct Node {
   void deleteList(Node<T> *n);
   void insert(Node<T> *n, const T& v);
   int getSize(const Node<T> *n) const;
-  void deleteNode(Node<T> *n);
   Node<T>* find(const T& v);
   
 };

@@ -17,12 +17,20 @@ int main(){
    u.addUser("Sam", "Sammy", "Samuel Chu", "software developer");
    u.addUser("Andrew", "Myers", "Andrew Myers", "software developer");
 
+   cout << "Current List: \n";
    u.printUsers();
 
+   
+   ASSERT_EQUALS(2,u.getSize());
+   
+   cout << "Deleting User: \"Sam\" \n";
+   u.deleteUser("Sam");
 
+   cout << "\nFinal List: \n";
+   u.printUsers();
    
 
 
-   ASSERT_EQUALS(2,u.getSize());
+   ASSERT_EQUALS(1,u.getSize());
 
 }
