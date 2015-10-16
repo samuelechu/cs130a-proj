@@ -1,3 +1,4 @@
+#include <fstream>
 #include <iostream>
 #include <string>
 #include "UserNetwork.h"
@@ -39,6 +40,22 @@ void UserNetwork::printUsers(){
 
 }
 
+void UserNetwork::saveUsers(){
+
+ 
+ LinkedList<User>::Node *n = users.getHead();
+
+ string s = "";
+    while(n){
+      s += n->value.getInfo();
+      n = n->next;
+    }
+
+
+    ofstream out("UserNetwork.txt");
+    out << s;
+  
+}
 
 void UserNetwork::deleteUser(string u){
   

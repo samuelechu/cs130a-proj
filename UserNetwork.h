@@ -1,12 +1,10 @@
 #ifndef __USER_NETWORK_H__
 #define __USER_NETWORK_H__
 
-
-
-
 #include <string>
 #include <iostream>
 #include "User.h"
+#include "Wall.h"
 #include "LinkedList.h"
 
 using namespace std;
@@ -27,7 +25,7 @@ class UserNetwork{
 
   void printUsers();
     
-
+  void saveUsers();
   
   
   int getSize(){return users.getSize();}

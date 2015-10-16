@@ -1,6 +1,6 @@
 #include <string>
 #include <iostream>
-
+#include "Wall.h"
 
 using namespace std;
 
@@ -21,9 +21,23 @@ void Wall::remove(int index){
 
 }
 
+string Wall::getWall(){
+  LinkedList<WallPost>::Node *n = wallPosts.getHead();
+
+  string out = "";
+  
+  while(n){
+    out += n->value.getPost();
+    n = n->next;
+  }
+
+  return out;
+
+}
+
 void Wall::printWall(){
 
-  LinkedList<WallPost> n = WallPosts.head;
+  LinkedList<WallPost>::Node *n = wallPosts.getHead();
   
   while(n){
     n->value.printPost();

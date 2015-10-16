@@ -16,10 +16,10 @@ BINARIES=testInsert testUserNetwork
 
 all: ${BINARIES}
 
-testInsert: testInsert.o LinkedList.o
+testInsert: testInsert.o LinkedList.o tddFuncs.o
 	${CXX} $^ -o $@
 
-testUserNetwork: testUserNetwork.o LinkedList.o UserNetwork.o
+testUserNetwork: testUserNetwork.o LinkedList.o UserNetwork.o User.o Wall.o WallPost.o tddFuncs.o
 	${CXX} $^ -o $@
 
 #testWordCount01: testWordCount01.o WordCount.o WordCountHelper.o tddFuncs.o
@@ -32,4 +32,4 @@ tests: ${BINARIES}
 
 
 clean:
-	/bin/rm -f ${BINARIES} *.o
+	/bin/rm -f ${BINARIES} *.o *.txt *~
