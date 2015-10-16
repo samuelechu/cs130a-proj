@@ -26,11 +26,14 @@ class Wall{
 
   void insert(string c, string t, string u);
   void remove(int index);
+
+  string getWall();
+  void printWall();
   
   string getUsername(){return username;}
   void setUsername(string &u){username = u;}
 
-  void printWall();  
+  
  private:
 
   LinkedList<WallPost> wallPosts;

@@ -19,7 +19,7 @@ int main(){
 
    cout << "Current List: \n";
    u.printUsers();
-
+   u.saveUsers();
    
    ASSERT_EQUALS(2,u.getSize());
    
