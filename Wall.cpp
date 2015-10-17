@@ -12,6 +12,15 @@ void Wall::insert(string c, string t, string u){
 
 }
 
+void Wall::loadPosts(string posts){
+LinkedList<WallPost>::Node *head = wallPosts.getHead();
+
+ wallPosts.deleteList(head);
+  
+  
+
+  
+}
 
 void Wall::remove(int index){
 

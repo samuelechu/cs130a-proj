@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "User.h"
 #include "Wall.h"
 #include "LinkedList.h"
@@ -22,10 +23,11 @@ class UserNetwork{
    
 
   void deleteUser(string u);
-
+  void printData();
   void printUsers();
-    
+  void loadUsers();
   void saveUsers();
+  void addPost(string u, string post, string time);
   
   
   int getSize(){return users.getSize();}

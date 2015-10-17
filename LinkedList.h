@@ -50,6 +50,7 @@ struct Node {
 
   }
 
+  void deleteList(Node *n);
   void deleteNode(Node *n);
   void deleteAtNdx(int index);
   
@@ -65,7 +66,7 @@ struct Node {
 
   // Given
   void printList(const Node *n, std::ostream &os) const;
-  void deleteList(Node *n);
+  
   void insert(Node *n, const T& v);
   int getSize(const Node *n) const;
   
@@ -107,6 +108,9 @@ struct Node {
 
   
   ~LinkedList() { deleteList(head); }
+
+
+  void deleteList(Node<T> *n);
   
   void insert(const T &value){ 
     if(!head) {
@@ -143,7 +147,7 @@ struct Node {
 
   // Given
   void printList(const Node<T> *n, std::ostream &os) const;
-  void deleteList(Node<T> *n);
+  
   void insert(Node<T> *n, const T& v);
   int getSize(const Node<T> *n) const;
   Node<T>* find(const T& v);

@@ -10,7 +10,7 @@ CXXFLAGS = -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-private-fi
 
 #CXXFLAGS = -std=c++11 -Wall -Wextra -Werror
 
-BINARIES=testInsert testUserNetwork
+BINARIES=testInsert testUserNetwork testLoadUsers
 #	testWordCount04 testWordCount05 testWordCount06 testWordCount07 \
 #	testWordCountHelper01
 
@@ -22,6 +22,9 @@ testInsert: testInsert.o LinkedList.o tddFuncs.o
 testUserNetwork: testUserNetwork.o LinkedList.o UserNetwork.o User.o Wall.o WallPost.o tddFuncs.o
 	${CXX} $^ -o $@
 
+testLoadUsers: testLoadUsers.o LinkedList.o UserNetwork.o User.o Wall.o WallPost.o tddFuncs.o
+	${CXX} $^ -o $@
+
 #testWordCount01: testWordCount01.o WordCount.o WordCountHelper.o tddFuncs.o
 #	${CXX} $^ -o $@
 
@@ -29,7 +32,8 @@ testUserNetwork: testUserNetwork.o LinkedList.o UserNetwork.o User.o Wall.o Wall
 tests: ${BINARIES}
 	./testInsert
 	./testUserNetwork
+	./testLoadUsers
 
 
 clean:
-	/bin/rm -f ${BINARIES} *.o *.txt *~
+	/bin/rm -f ${BINARIES} *.o *~
