@@ -6,7 +6,6 @@ using namespace std;
 
 void Wall::insert(string c, string t, string u){
   WallPost w = WallPost(c, t, u);
-
   wallPosts.insert(w);
 
 

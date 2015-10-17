@@ -19,6 +19,7 @@ void UserNetwork::loadUsers(){
     User newUser = User(input);
     
     users.insert(newUser);
+    getline(myfile,current,'\n');
     input = "";
     }
     
@@ -102,7 +103,7 @@ void UserNetwork::saveUsers(){
     }
 
 
-    ofstream out("UserNetwork.txt");
+    ofstream out("network.txt");
     out << s;
   
 }
@@ -122,4 +123,20 @@ void UserNetwork::deleteUser(string u){
     }
 
 
+}
+
+User UserNetwork::find(string username){
+
+   LinkedList<User>::Node *n = users.getHead();
+
+    while(n){
+
+      if(n->value.getUsername().compare(username) == 0)
+        return n->value;
+
+      n = n->next;
+
+    }
+
+  return NULL;
 }

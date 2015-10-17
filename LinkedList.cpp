@@ -61,18 +61,18 @@ void LinkedList<T>::deleteNode(LinkedList<T>::Node *n){
   if(!n->next){
     n->prev->next = NULL;
     tail = n->prev;
-    delete n;
+  //  delete n;
   }
   else if(!n->prev){
     n->next->prev = NULL;
     head = n->next;
-    delete n;
+   // delete n;
     return;
   }
   else{
     n->prev->next = n->next;
     n->next->prev = n->prev;
-    delete n;
+    //delete n;
   }
     
   
@@ -86,7 +86,7 @@ void LinkedList<T>::deleteList(LinkedList<T>::Node *n){
 
   deleteList(n -> next);
 
-  delete n;
+  //delete n;
   return;
 }
 

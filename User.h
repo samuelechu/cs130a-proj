@@ -13,7 +13,7 @@ class User{
     username = w.getUsername();
   }*/
 
-
+ User(){}
  User(string u, string p, string rn, string occ): username(u),  password(p), realName(rn), occupation(occ){
     wall.setUsername(u);
   }
@@ -23,7 +23,8 @@ class User{
   }
 
   User(string input){
-    stringstream iss(input);
+   
+     stringstream iss(input);
 
     string word;
     getline(iss, word, '\n');
@@ -34,12 +35,14 @@ class User{
     this->realName = word;
     getline(iss, word, '\n');
     this->occupation = word;
-
+    
     string date;
     
     while(getline(iss, word, '\n')){
+      
       date = word;
       getline(iss, word, '\n');
+      cout << word;
       addWallPost(word, date);
     }
   }
@@ -67,6 +70,8 @@ class User{
 
   string getOccupation(){return occupation;}
   void setOccupation(string &occ){occupation = occ;}
+
+  void printWall(){cout << wall.getWall();}
 
   void addWallPost(string c, string t){wall.insert(c, t, username);}
   void deleteWallPost(int index) { wall.remove(index);};
