@@ -12,14 +12,11 @@ int main(){
 
    UserNetwork u;
    
-
-   u.addUser("Sam", "Sammy", "Samuel Chu", "software developer");
-   u.addUser("Sam", "Sammy", "Samuel Chu", "software developer");
-   u.addUser("Andrew", "Myers", "Andrew Myers", "software developer");
-   u.addPost("Sam","Hello World!", "7:30 PM");
+   u.loadUsers();
+   
    cout << "Current List: \n";
-   u.printUsers();
-   u.saveUsers();
+   u.printData();
+
    
    ASSERT_EQUALS(2,u.getSize());
    
@@ -27,7 +24,7 @@ int main(){
    u.deleteUser("Sam");
 
    cout << "\nFinal List: \n";
-   u.printUsers();
+   u.printData();
    
 
 

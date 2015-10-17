@@ -1,4 +1,5 @@
 #include <fstream>
+#include <istream>
 #include <iostream>
 #include <string>
 #include "UserNetwork.h"
@@ -6,7 +7,29 @@
 
 using namespace std;
 
+void UserNetwork::loadUsers(){
+  ifstream myfile;
+  myfile.open("network.txt");
+  string input;
+  string current;
+  while(getline(myfile, current, '\n')){
+    input += (current + "\n");
+    cout<<input;
+    if (myfile.peek() == '\n'){
+    User newUser = User(input);
+    
+    users.insert(newUser);
+    input = "";
+    }
+    
+  }
+  
 
+
+  
+}
+
+  
 void UserNetwork::addUser(User& user){
 
   LinkedList<User>::Node *n = users.getHead();
@@ -27,6 +50,23 @@ void UserNetwork::addUser(User& user){
 }
 
 
+void UserNetwork::addPost(string u, string post, string time){
+    LinkedList<User>::Node *n = users.getHead();
+
+      while(n){
+
+        if(n->value.getUsername().compare(u) == 0){
+
+
+            n->value.addWallPost(post, time);
+            return;
+        }
+        n = n->next;
+
+      }
+}
+
+
 void UserNetwork::printUsers(){
 
 
@@ -38,6 +78,16 @@ void UserNetwork::printUsers(){
     }
 
 
+}
+
+void UserNetwork::printData(){
+   LinkedList<User>::Node *n = users.getHead();
+
+   while(n){
+      cout<< n->value.getInfo() << "\n";
+      n = n->next;
+    }
+  
 }
 
 void UserNetwork::saveUsers(){

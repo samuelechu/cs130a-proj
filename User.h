@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <sstream>
 #include "Wall.h"
 using namespace std;
 
@@ -17,6 +18,34 @@ class User{
     wall.setUsername(u);
   }
 
+ User(string u, string p, string rn, string occ, string wall): username(u),  password(p), realName(rn), occupation(occ){
+    // wall.setUsername(u);
+  }
+
+  User(string input){
+    stringstream iss(input);
+
+    string word;
+    getline(iss, word, '\n');
+    this->username  = word;
+    getline(iss, word, '\n');
+    this->password = word;
+    getline(iss, word,'\n');
+    this->realName = word;
+    getline(iss, word, '\n');
+    this->occupation = word;
+
+    string date;
+    
+    while(getline(iss, word, '\n')){
+      date = word;
+      getline(iss, word, '\n');
+      addWallPost(word, date);
+    }
+  }
+
+
+  
   ~User(){
 
 
@@ -40,7 +69,7 @@ class User{
   void setOccupation(string &occ){occupation = occ;}
 
   void addWallPost(string c, string t){wall.insert(c, t, username);}
-
+  void deleteWallPost(int index) { wall.remove(index);};
  private:
 
   Wall wall;

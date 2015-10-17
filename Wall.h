@@ -24,6 +24,7 @@ class Wall{
 
   }
 
+  void loadPosts(string posts);
   void insert(string c, string t, string u);
   void remove(int index);
 
