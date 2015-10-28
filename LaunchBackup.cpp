@@ -2,7 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <limits>
+
 
 void handleSelection(char a);
 void createNewUser();
@@ -100,12 +100,10 @@ void loginUser(){
   string password;
   bool invalid = true;
 
-  cin.clear();
-  cin.ignore(numeric_limits<streamsize>::max(), '\n');
-  while(invalid){
+  while(invalid)
   cout << "Enter username." << endl;
   cin >> username;
-  LinkedList<User>::Node *theUser = theNetwork.find(username);
+  User theUser = theNetwork.find(username);
   if(theUser == NULL){
     cout << "User does not exist!" << endl;
     invalid = true;
@@ -117,28 +115,25 @@ void loginUser(){
     while(!passCheck){
       cout << "Enter password for " << username << endl;
       cin >> password;
-      if(password.compare(theUser->value.getPassword()) != 0){
+      if(password.compare(theUser.getPassword()) != 0){
         passCheck = false;
         cout << "Password incorrect!" << endl;
       }
       else{
         passCheck = true;
-        currentUser = theUser->value;
+        currentUser = theUser;
         openUserMenu();
       }
     }
-  }
  
   }
-
-    cout << "Welcome to VisageLivre!\nSelect an option to begin:\n(1) Create New User\n(2) Login Existing User\n(0)Quit\n";
 }
 
 void openUserMenu(){
 
   bool loop = true;
 
-    cout << "Welcome to VisageLivre, " << currentUser.getRealName() << "!\nSelect an option to begin:\n(1) Create Wall Post\n(2) Delete a Wall Post\n(3) Print Wall\n(0)Logout\n";
+    cout << "Welcome to VisageLivre, " << theUser.getRealName() << "!\nSelect an option to begin:\n(1) Create Wall Post\n(2) Delete a Wall Post\n(3) Print Wall(0)Logout\n";
 
 while (loop){
 
@@ -167,13 +162,8 @@ void handleUserSelection(char selection){
   if(selection == '3')
     handlePrintWall();
 }
-void handleCreatePost(){
-  cout << "I'm sorry, that isn't a feature yet :(" << endl;
-}
-void handleDeletePost(){
-  cout << "I'm sorry, that isn't a feature yet :(" << endl;
-}
+
 void handlePrintWall(){
 
-  currentUser.printWall();
+  theUser.printWall();
 }

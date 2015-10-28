@@ -28,7 +28,7 @@ class UserNetwork{
   void loadUsers();
   void saveUsers();
   void addPost(string u, string post, string time);
-  User find(string username); 
+  LinkedList<User>::Node *find(string username); 
 
   
   int getSize(){return users.getSize();}

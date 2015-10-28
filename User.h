@@ -9,9 +9,6 @@ using namespace std;
 
 class User{
  public:
-  /*User(Wall w, string p, string rn, string occ): password(p), realName(rn), occupation(occ){
-    username = w.getUsername();
-  }*/
 
  User(){}
  User(string u, string p, string rn, string occ): username(u),  password(p), realName(rn), occupation(occ){
@@ -42,7 +39,6 @@ class User{
       
       date = word;
       getline(iss, word, '\n');
-      cout << word;
       addWallPost(word, date);
     }
   }

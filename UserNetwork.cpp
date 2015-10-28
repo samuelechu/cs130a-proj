@@ -14,7 +14,6 @@ void UserNetwork::loadUsers(){
   string current;
   while(getline(myfile, current, '\n')){
     input += (current + "\n");
-    cout<<input;
     if (myfile.peek() == '\n'){
     User newUser = User(input);
     
@@ -125,14 +124,14 @@ void UserNetwork::deleteUser(string u){
 
 }
 
-User UserNetwork::find(string username){
+LinkedList<User>::Node *UserNetwork::find(string username){
 
    LinkedList<User>::Node *n = users.getHead();
 
     while(n){
 
       if(n->value.getUsername().compare(username) == 0)
-        return n->value;
+        return n;
 
       n = n->next;
 
